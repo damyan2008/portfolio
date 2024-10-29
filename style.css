@@ -1,0 +1,208 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    margin-top: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(12, 18, 34, 1);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+header{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    position: sticky;
+    top: 100px;
+    align-self: self-start;
+    overflow: hidden;
+    width: 50%;
+    color: rgb(201 215 227);
+    
+}
+
+header h1, h2{
+    margin: 10px 0;
+}
+
+header p{
+    color: rgb(170 164 155);
+    margin-bottom: 50px;
+}
+
+header a{
+    top: 0;
+    color: rgb(170 164 155);
+    text-decoration: none;
+    margin: 10px 0;
+    align-self: flex-start;
+    font-size: 20px;
+
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+  }
+  
+  a::before,
+  a::after {
+   content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+  a::before {
+    background-color: #ffffff;
+    height: 2px;
+    bottom: 0;
+    transform-origin: 100% 50%;
+    transform: scaleX(0);
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  a::after {
+    content: attr(data-replace);
+    height: 100%;
+    top: 0;
+    transform-origin: 100% 50%;
+    transform: translate3d(200%, 0, 0);
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+    color: #ffffff;
+  }
+  
+  a:hover::before {
+    transform-origin: 0% 50%;
+    transform: scaleX(1);
+  }
+  a:hover::after {
+    transform: translate3d(0, 0, 0);
+  }
+  
+  a span {
+    display: inline-block;
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  
+  a:hover span {
+    transform: translate3d(-200%, 0, 0);
+  }
+
+header a:hover{
+    color: rgb(201 215 227);
+    /*text-decoration: underline;*/
+}
+
+header i{
+    margin-top: 30px;
+}
+
+main {
+    color: rgb(170 164 155);
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+    width: 50%;
+}
+
+main strong{
+  font-size: 40px;
+  margin-top: 5px;
+  align-self: center;
+}
+
+main form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+
+  input::placeholder {
+      color: rgb(116, 116, 116);
+  }
+
+  textarea::placeholder {
+    color: rgb(116, 116, 116);
+  }
+  textarea{
+    resize: none;
+  }
+
+}
+
+input, select, textarea{
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main form input, main form textarea {
+  background-color: #272e50;
+  padding: 10px;
+  border: 1px solid #33384e;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.button{
+  align-items: center;
+  margin-top: 20px;
+  color: white;
+  font-size: 20px;
+}
+
+.button:hover{
+  background-color: #33384e;
+  cursor: pointer;
+}
+
+.cursor {
+  width: 5000px;
+  height: 5000px;
+  background: rgb(17,31,67);
+  background: radial-gradient(circle, rgba(17,31,67,1) 0%, rgba(17,31,67,0.35) 40%, rgba(17,31,67,0) 80%);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+
+/*.wavy {
+  animation-name: wavy;
+  animation-duration: 1.3s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+@keyframes wavy {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: -15px;
+  }
+  100% {
+    top: 0px;
+  }
+}*/
+
+/*source: https://brittanychiang.com/#about*/
